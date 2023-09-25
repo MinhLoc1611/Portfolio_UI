@@ -4,7 +4,7 @@ export default function Works() {
   return (
     <Box sx={{ mt: { xs: 5, md: 0 } }}>
       <Container>
-        <Grid container sx={{ px: "auto", p: { xs: 5, md: 15 } }} spacing={5}>
+        <Grid container sx={{ px: "auto", p: { xs: 3, sm:5, md: 15 } }} spacing={5}>
           <Grid item xs={12}>
             <Typography
               sx={{

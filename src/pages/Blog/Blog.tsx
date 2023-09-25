@@ -5,7 +5,7 @@ export default function Blog() {
   return (
     <Box sx={{ mt: { xs: 5, md: 0 } }}>
       <Container sx={{ mx: "auto" }}>
-        <Box sx={{ px: "auto", p: { xs: 5, md: 15 } }}>
+        <Box sx={{ px: "auto", p: { xs: 3, sm:5, md: 15 } }}>
           <Typography
             sx={{
               fontSize: { xs: "30px", md: "44px" },
