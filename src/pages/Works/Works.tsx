@@ -1,34 +1,16 @@
 import { Box, Typography, Grid, Chip, Container } from "@mui/material";
-import { Props } from "../Home/Home";
 
-export default function Works({isMobile} : Props) {
-   
-    let boxPadding = 0
-    let titleSize = ''
-    let titleWeight = 0
-    let boxMarginTop = 0
-    if(isMobile){
-        boxPadding = 15
-        titleSize = '44px'
-        titleWeight = 900
-        boxMarginTop = 0
-    } else {
-        boxPadding = 5
-        titleSize = '30px'
-        titleWeight = 700
-        boxMarginTop = 5
-    }
-
+export default function Works() {
   return (
-    <Box sx={{mt:boxMarginTop}}>
+    <Box sx={{ mt: { xs: 5, md: 0 } }}>
       <Container>
-        <Grid container sx={{ px: "auto", p:boxPadding }} spacing={5}>
+        <Grid container sx={{ px: "auto", p: { xs: 5, md: 15 } }} spacing={5}>
           <Grid item xs={12}>
             <Typography
               sx={{
-                fontSize: `${titleSize}`,
-              fontWeight: titleWeight,
-              lineHeight: "60px",
+                fontSize: { xs: "30px", md: "44px" },
+                fontWeight: { xs: 700, md: 900 },
+                lineHeight: "60px",
               }}
               gutterBottom
             >

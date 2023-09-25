@@ -8,26 +8,14 @@ import {
   Typography,
 } from "@mui/material";
 
-export interface Props {
-    isMobile: boolean
-}
-
-export default function Home({isMobile} : Props) {
-
-    let boxMarginTop = 0
-    if(isMobile){
-        boxMarginTop = 15
-    } else {
-        boxMarginTop = 10
-    }
+export default function Home() {
 
   return (
-    <Box sx={{ mt: boxMarginTop }}>
+    <Box sx={{ mt: {xs:10, md:15} }}>
       <Box>
         <Container>
-        {isMobile && 
-            <Grid container sx={{ px: "auto", p: 5 }} spacing={3}>
-            <Grid item md={7}>
+        <Grid container sx={{ px: "auto", p: 5 }} spacing={3}>
+            <Grid item xs={12} md={7} sx={{order:{xs:2, md:1}, textAlign:{xs:'center', md:'left'}}}>
               <Typography
                 sx={{
                   fontWeight: 700,
@@ -61,8 +49,8 @@ export default function Home({isMobile} : Props) {
                 Download Resume
               </Button>
             </Grid>
-            <Grid item md={5}>
-              <Box>
+            <Grid item xs={12} md={5} sx={{order:{xs:1, md:2}}}>
+              <Box sx={{display:'flex', justifyContent:'center'}}>
                 <Avatar
                   alt="John"
                   src="./img/avatar.jpg"
@@ -75,59 +63,6 @@ export default function Home({isMobile} : Props) {
               </Box>
             </Grid>
           </Grid>
-        }
-        {!isMobile && 
-            <Grid container sx={{ px: "auto", p: 5, textAlign: 'center' }} spacing={3}>
-                <Grid item xs={12}>
-              <Box sx={{display: "flex", justifyContent:'center'}}>
-                <Avatar
-                  alt="John"
-                  src="./img/avatar.jpg"
-                  sx={{
-                    width: 243,
-                    height: 243,
-                    boxShadow: "-0.4em 0.4em 0 0 #EDF7FA"
-                  }}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography
-                sx={{
-                  fontWeight: 700,
-                  fontSize: "44px",
-                  lineHeight: "60px",
-                  mb: 4,
-                }}
-              >
-                Hi, I am John, <br /> Creative Technologist
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: 400,
-                  lineHeight: "24px",
-                  letterSpacing: "0px",
-                  mb: 4,
-                }}
-              >
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
-                Exercitation veniam consequat sunt nostrud amet.
-              </Typography>
-              <Button
-                variant="contained"
-                sx={{
-                  bgcolor: "#FF6464",
-                  ":hover": { bgcolor: "red" },
-                  mb: 4,
-                }}
-              >
-                Download Resume
-              </Button>
-            </Grid>
-            
-          </Grid>
-        }
         </Container>
       </Box>
       <Box sx={{ mt: 5, bgcolor: "#EDF7FA" }}>

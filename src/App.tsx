@@ -5,18 +5,17 @@ import Footer from "./components/Footer";
 import Blog from "./pages/Blog/Blog";
 import Works from "./pages/Works/Works";
 import Contact from "./pages/Contact/Contact";
-import { useMediaQuery } from "@mui/material";
 
 function App() {
-    const isMobile = useMediaQuery('(min-width:900px)')
+   
   return (
     <BrowserRouter>
       <HeaderBar />
       <Routes>
-        <Route path="/" element={<Home isMobile={isMobile} />} />
-        <Route path="/blog" element={<Blog isMobile={isMobile} />}/>
-        <Route path="/works" element={<Works isMobile={isMobile} />}/>
-        <Route path="/contact" element={<Contact isMobile={isMobile} />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />}/>
+        <Route path="/works" element={<Works />}/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

@@ -1,28 +1,14 @@
 import { Box, Container, Typography } from "@mui/material";
 import CardBlog from "./CardBlog/CardBlog";
-import { Props } from "../Home/Home";
 
-export default function Blog({isMobile} : Props) {
-    
-    let boxPadding = 0
-    let titleSize = ''
-    let boxMarginTop = 0
-    if(isMobile){
-        boxPadding = 15
-        titleSize = '44px'
-        boxMarginTop = 0
-    } else {
-        boxPadding = 5
-        titleSize = '30px'
-        boxMarginTop = 3
-    }
+export default function Blog() {
   return (
-    <Box sx={{mt:boxMarginTop}}>
+    <Box sx={{ mt: { xs: 5, md: 0 } }}>
       <Container sx={{ mx: "auto" }}>
-        <Box sx={{px:'auto', p:boxPadding}}>
+        <Box sx={{ px: "auto", p: { xs: 5, md: 15 } }}>
           <Typography
             sx={{
-              fontSize: `${titleSize}`,
+              fontSize: { xs: "30px", md: "44px" },
               fontWeight: 700,
               lineHeight: "60px",
             }}
@@ -30,10 +16,10 @@ export default function Blog({isMobile} : Props) {
           >
             Blog
           </Typography>
-            <CardBlog/>
-            <CardBlog/>
-            <CardBlog/>
-            <CardBlog/>
+          <CardBlog />
+          <CardBlog />
+          <CardBlog />
+          <CardBlog />
         </Box>
       </Container>
     </Box>
